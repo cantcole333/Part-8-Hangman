@@ -39,6 +39,15 @@ namespace Part_8_Hangman
                 lblStatus.Text = Convert.ToString(index);
                 lblWord.Text = displayWord;
                 txtGuess.Text = "";
+                if (userGuess == "")
+                {
+                    
+                    lblStatus.Text = "Please enter something in the text box";
+                }
+                if (displayWord == "C O M P U T E R")
+                {
+                    lblStatus.Text = "Status: You Win!";
+                }
             }
             else
             {
@@ -46,19 +55,24 @@ namespace Part_8_Hangman
                 guess = guess += 1;
                 if (guess == 1)
                 {
+                    lblStatus.Text = "Incorrect! you have two more guesses";
                     imgHangman.Image = Properties.Resources.hangman_1;
                 }
                 else if (guess == 2)
                 {
+                    lblStatus.Text = "Incorrect! you have " +
+                        "one more guess";
                     imgHangman.Image = Properties.Resources.hangman_2;
                 }
                 else if (guess == 3)
                 {
+                    lblStatus.Text = "Incorrect! you have" +
+                        " no more guesses";
                     imgHangman.Image = Properties.Resources.hangman_dead;
                 }
                 if (guess > 3)
                 {
-                    lblStatus.Text = "You lose!";
+                    lblStatus.Text = "Status: You lose!";
                 }
             }
             
@@ -77,6 +91,21 @@ namespace Part_8_Hangman
         }
 
         private void lblStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsedLetters_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGuess_TextChanged(object sender, EventArgs e)
         {
 
         }
