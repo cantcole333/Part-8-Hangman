@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,24 +32,22 @@ namespace Part_8_Hangman
         {
             
             string userGuess = txtGuess.Text.ToUpper();
-            if (word.Contains(userGuess))
-            {
-                index = word.IndexOf(userGuess);
-                displayWord = displayWord.Remove(index*2, 1);
-                displayWord = displayWord.Insert(index*2, userGuess);
-                lblStatus.Text = Convert.ToString(index);
-                lblWord.Text = displayWord;
-                txtGuess.Text = "";
-                if (userGuess == "")
+            if (userGuess != "")
+                if (word.Contains(userGuess))
                 {
+                    index = word.IndexOf(userGuess);
+                    displayWord = displayWord.Remove(index*2, 1);
+                    displayWord = displayWord.Insert(index*2, userGuess);
+                    lblStatus.Text = Convert.ToString(index);
+                    lblWord.Text = displayWord;
+                    txtGuess.Text = "";
                     
-                    lblStatus.Text = "Please enter something in the text box";
+                    if (displayWord == "C O M P U T E R")
+                    {
+                        lblStatus.Text = "Status: You Win!";
+                    }
                 }
-                if (displayWord == "C O M P U T E R")
-                {
-                    lblStatus.Text = "Status: You Win!";
-                }
-            }
+            
             else
             {
                 lstGuessedLetters.Items.Add(userGuess);
@@ -60,20 +59,18 @@ namespace Part_8_Hangman
                 }
                 else if (guess == 2)
                 {
-                    lblStatus.Text = "Incorrect! you have " +
-                        "one more guess";
+                    lblStatus.Text = "Incorrect! you have one more guess";
                     imgHangman.Image = Properties.Resources.hangman_2;
                 }
                 else if (guess == 3)
                 {
-                    lblStatus.Text = "Incorrect! you have" +
-                        " no more guesses";
+                    lblStatus.Text = "Incorrect! you have no more guesses";
                     imgHangman.Image = Properties.Resources.hangman_dead;
+                        Close();
+
                 }
-                if (guess > 3)
-                {
-                    lblStatus.Text = "Status: You lose!";
-                }
+                
+                
             }
             
 

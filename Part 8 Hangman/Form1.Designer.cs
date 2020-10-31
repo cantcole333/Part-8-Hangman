@@ -42,7 +42,7 @@
             // btnGuess
             // 
             this.btnGuess.Location = new System.Drawing.Point(531, 285);
-            this.btnGuess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuess.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuess.Name = "btnGuess";
             this.btnGuess.Size = new System.Drawing.Size(67, 25);
             this.btnGuess.TabIndex = 0;
@@ -65,7 +65,7 @@
             // 
             this.imgHangman.Image = global::Part_8_Hangman.Properties.Resources.hangman_empty1;
             this.imgHangman.Location = new System.Drawing.Point(13, 85);
-            this.imgHangman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.imgHangman.Margin = new System.Windows.Forms.Padding(4);
             this.imgHangman.Name = "imgHangman";
             this.imgHangman.Size = new System.Drawing.Size(154, 200);
             this.imgHangman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -78,7 +78,7 @@
             this.lstGuessedLetters.FormattingEnabled = true;
             this.lstGuessedLetters.ItemHeight = 16;
             this.lstGuessedLetters.Location = new System.Drawing.Point(452, 107);
-            this.lstGuessedLetters.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstGuessedLetters.Margin = new System.Windows.Forms.Padding(4);
             this.lstGuessedLetters.Name = "lstGuessedLetters";
             this.lstGuessedLetters.Size = new System.Drawing.Size(145, 164);
             this.lstGuessedLetters.TabIndex = 4;
@@ -98,7 +98,7 @@
             // txtGuess
             // 
             this.txtGuess.Location = new System.Drawing.Point(453, 285);
-            this.txtGuess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGuess.Margin = new System.Windows.Forms.Padding(4);
             this.txtGuess.Name = "txtGuess";
             this.txtGuess.Size = new System.Drawing.Size(70, 22);
             this.txtGuess.TabIndex = 6;
@@ -140,7 +140,7 @@
             this.Controls.Add(this.imgHangman);
             this.Controls.Add(this.lblWord);
             this.Controls.Add(this.btnGuess);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Hangman";
             this.Text = "Hangman";
             this.Load += new System.EventHandler(this.Hangman_Load);
